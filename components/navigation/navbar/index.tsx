@@ -6,22 +6,39 @@ import styled from 'styled-components'
 const NavLink = styled.li`
   padding: 0.3rem 1.25rem;
   cursor: pointer;
-  border-bottom: 0.175rem solid transparent;
+  border-bottom: 0.18rem solid transparent;
+  transition: border-bottom .3s ease-in-out;
+
   &:hover {
-    border-bottom: 0.175rem solid blue;
+    border-bottom: 0.18rem solid var(--primary-color);
+  }
+  a {
+    letter-spacing: 0.115rem;
+  }
+
+  &.active {
+    border-bottom: 0.18rem solid var(--primary-color);
   }
 `
 
 function Index() {
   return (
     <div className='flex items-center py-3 px-20 justify-between'>
-      <Image src="/assets/images/brand.png" height={40} width={70} alt='brand-logo' />
+      <Image src="/assets/images/brand.png" height={40} width={90} alt='brand-logo' />
       <div className='flex'>
-        <ul className='flex'>
-          <NavLink>
+        <ul className='flex gap-3'>
+          <NavLink className='active'>
             <a href='#'>Home</a>
           </NavLink>
-          <NavLink>Portofolio</NavLink>
+          <NavLink>
+            <a href='#'>Portofolio</a>
+          </NavLink>
+          <NavLink>
+            <a href='#'>About</a>
+          </NavLink>
+          <NavLink>
+            <a href='#'>Contact Us</a>
+          </NavLink>
         </ul>
       </div>
     </div>
